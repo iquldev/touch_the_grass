@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "touch_the_grass",
+  "version": "${version}",
+  "name": "Touch the grass",
+  "description": "A timer after which you'll have to go outside!",
+  "authors": [
+    "iquldev", "chatgpt"
+  ],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/touch_the_grass",
+    "sources": "https://github.com/iquldev/touch_the_grass",
+    "issues": "https://github.com/iquldev/touch_the_grass/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/touch_the_grass/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "fabric-datagen": [
+      "iquldev.client.touch_the_grassDataGenerator"
+    ],
+    "client": [
+      "iquldev.client.touch_the_grassClient"
+    ],
+    "main": [
+      "iquldev.touch_the_grass"
+    ],
+    "modmenu": [
+      "iquldev.client.touch_the_grassModmenu"
+    ]
+  },
+  "mixins": [
+    "touch_the_grass.mixins.json",
+    {
+      "config": "touch_the_grass.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "~1.21"
+  }
+}
